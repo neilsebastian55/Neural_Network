@@ -8,4 +8,6 @@ class Layer:
     
     def forward(self,x):
         self.input = x
-        self.weighted_sum
+        self.weighted_sum = x @ self.weights + self.bias
+        self.output = self.activation.forward(self.weighted_sum)
+        
